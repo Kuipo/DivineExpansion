@@ -45,8 +45,8 @@ local function on_ready()
 	-- what to do when we are ready, but not re-do on reload.
 	if config.enabled == false then return end
 	
-	import 'sjson.lua'
 	import 'ready.lua'
+	import 'gods.lua'
 end
 
 local function on_reload()

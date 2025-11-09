@@ -32,6 +32,10 @@ target = "./LICENSE"
 source = "./src"
 target = "./plugins"
 
+[[build.copy]]
+source = "./packages"
+target = "./plugins_data"
+
 [publish]
 repository = "https://thunderstore.io"
 communities = [ "hades-ii", ]

@@ -10,4 +10,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Setup initial version of mod
-- 
+- Added proof of concept of Tyche (Only partially working for now)
