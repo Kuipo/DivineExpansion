@@ -36,6 +36,12 @@ local textLineSets = {
 		{ Cue = "/VO/Artemis_0012", UseEventEndSound = true, Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
 	},
 }
+-- This is required to give the text line sets their names
+for k, v in pairs(textLineSets) do
+    if not v.Name then
+        v.Name = k
+    end
+end
 
 
 gods.InitializeGod({
