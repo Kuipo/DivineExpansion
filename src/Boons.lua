@@ -35,7 +35,7 @@ game.TraitData.TycheAttackBoon = {
 			ProximityThresholdExclusionBoon = "AllCloseBoon",
 			ProximityMultiplier = 
 			{ 
-				BaseValue = 1.8,
+				BaseValue = 5.0,
 				SourceIsMultiplier = true,
 
 				AbsoluteStackValues =
