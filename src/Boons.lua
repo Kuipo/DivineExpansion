@@ -22,3 +22,21 @@
    --     Heroic = {
    --         Multiplier = 2.50,
    --     },
+
+local TycheTraitDictionary = {
+	SupportingFireBoon = true,
+	CritBonusBoon = true,
+	DashOmegaBuffBoon = true,
+	HighHealthCritBoon = true,
+	InsideCastCritBoon = true,
+	OmegaCastVolleyBoon = true,
+	TimedCritVulnerabilityBoon = true,
+	-- New Boons
+	ArtemisWeaponBoon = true,
+	ArtemisSpecialBoon = true,
+	ArtemisCriticalBoon = true,
+	ArtemisArmourBoon = true,
+}
+
+game.ScreenData.BoonInfo.TraitDictionary.TycheUpgrade = ArtemisTraitDictionary
+game.LootData.TycheUpgrade.TraitIndex = TycheTraitDictionary
