@@ -52,7 +52,7 @@ gods.InitializeGod({
     LoadPackages = { "DET-DivineExpansion" },
     FlavorTextIds = { "TycheUpgrade_FlavorText01", "TycheUpgrade_FlavorText02", "TycheUpgrade_FlavorText03" },
 
-    Traits = game.TratData.TycheUpgrade,
+    Traits = game.TraitData.TycheUpgrade,
 
     Color = { 255, 90, 140, 255 },
     LightingColor = { 250, 165, 190, 190 },

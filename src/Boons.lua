@@ -1,5 +1,5 @@
 -- Creating the boon functions itself
-TycheAttackBoon = game.TraitData.TycheAttackBoon,
+TycheAttackBoon = game.TraitData.TycheAttackBoon
 game.TraitData.TycheAttackBoon = {
     InheritFrom = { "BaseTrait", "EarthBoon" },
     Elements = { "Earth" }, -- Need to add this even if you inherit,
@@ -69,12 +69,16 @@ game.TraitData.TycheAttackBoon = {
 				BlockGraphic = "SuitDeflect_Aphrodite",
 			}
 		},
-	},
+	}
+}
 
 local TycheTraitDictionary = {
 	TycheAttackBoon = true,
-},
+}
 
-game.ScreenData.BoonInfo.TraitDictionary.TycheUpgrade = TycheTraitDictionary,
-game.LootData.TycheUpgrade.TraitIndex = TycheTraitDictionary,
-game.TratData.TycheUpgrade = TycheTraitDictionary,
+game.ScreenData.BoonInfo.TraitDictionary.TycheUpgrade = TycheTraitDictionary
+
+-- I had to comment this out to prevent errors during load. Not sure exactly how to do this part of the mod, I'm pretty sure that's why the traits aren't loading properly.
+-- game.TraitData.TycheUpgrade = TycheTraitDictionary
+-- game.LootData.TycheUpgrade.TraitIndex = TycheTraitDictionary
+
