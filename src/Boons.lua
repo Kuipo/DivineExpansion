@@ -1,30 +1,35 @@
--- Creating the boon functions itself
-TycheAttackBoon = game.TraitData.TycheAttackBoon
-game.TraitData.TycheAttackBoon = {
-    InheritFrom = { "BaseTrait", "EarthBoon" },
-    Elements = { "Earth" }, -- Need to add this even if you inherit,
-    Name = "Tyche_Attack_Boon",
-    BoonInfoTitle = "Tyche_Attack_",
-    Icon = "Boon_Aphrodite_27",
-    Slot = "Melee",
-    TraitOrderingValueCache = 50,
-  Cost = 30,
-   BlockStacking = false,
-  RarityLevels = {
-     Common = {
-            Multiplier = 1.00,
-      },
-       Rare = {
-         Multiplier = 1.50,
-      },
-       Epic = {
-           Multiplier = 2.00,
-       },
-      Heroic = {
-           Multiplier = 2.50,
-       },
-		AddOutgoingDamageModifiers =
-		{
+gods.CreateBoon({
+	pluginGUID = _PLUGIN.guid,
+	internalBoonName = "TycheWeaponBoon",  -- eg TycheWeaponBoon
+	isLegendary = false,
+    Elements = {"Air"},
+    characterName = "Tyche",
+	addToExistingGod = { boonPosition = 1 },
+	--[[addToExistingGod = { boonPosition = 2 }, -- OR true // Allows you to insert traits into Olympains (Zeus etc) and Daedalus Hammers (characterName = Weapon) --- Chaos and Selene NOT supported ATM.]]
+    --[[? Everything below is an Optional field]]
+
+    -- "Melee" or "Secondary" or "Ranged" or "Rush" or "Mana", doesn't need to be passed if not a core boon.
+    Slot = "Special", 
+    BlockStacking = false, -- Can't be upgraded with poms
+   -- refer to traits, or make your own from extra fields
+    displayName = "Awesome!",
+    description = "Awesome Description!",
+    flavourText = "Legendary Flavour Text!",
+    reusingBaseIcons = false, -- Optional, allows you to reuse icons in base game, you still need to pass in paths
+    boonIconPath = "DET-DivineExpansion\\Tyche\\Tyche_Boon",
+    RarityLevels = {
+        Common = { Multiplier = 1.0 },
+        Rare = { Multiplier = 1.5 },
+        Epic = { Multiplier = 2.0 },
+        Heroic = { Multiplier = 2.5 },
+    },
+
+    --[[
+    This is basically where you do all your funky stuff that you want the boon to do, there are a -
+        lot of fields you can look at by using existing traits, or even make your own new ones.
+    ]]
+	ExtraFields = { 
+		AddOutgoingDamageModifiers = {
 			ValidWeapons = WeaponSets.HeroPrimaryWeapons,
 			ConditionalValidWeapon = 
 			{
@@ -69,16 +74,6 @@ game.TraitData.TycheAttackBoon = {
 				BlockGraphic = "SuitDeflect_Aphrodite",
 			}
 		},
-	}
-}
-
-local TycheTraitDictionary = {
-	TycheAttackBoon = true,
-}
-
-game.ScreenData.BoonInfo.TraitDictionary.TycheUpgrade = TycheTraitDictionary
-
--- I had to comment this out to prevent errors during load. Not sure exactly how to do this part of the mod, I'm pretty sure that's why the traits aren't loading properly.
--- game.TraitData.TycheUpgrade = TycheTraitDictionary
--- game.LootData.TycheUpgrade.TraitIndex = TycheTraitDictionary
-
+	}	
+} 
+   )
