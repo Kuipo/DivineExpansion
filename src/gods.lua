@@ -44,15 +44,16 @@ for k, v in pairs(textLineSets) do
 end
 
 
-gods.InitializeGod({
-    godName = "Tyche",
+
+  gods.InitializeGod.auto() ( {
+		godName = "Tyche",
     godType  = "GOD",
     SpawnLikeHermes  = false,
     Gender = "F",
     LoadPackages = { "DET-DivineExpansion" },
     FlavorTextIds = { "TycheUpgrade_FlavorText01", "TycheUpgrade_FlavorText02", "TycheUpgrade_FlavorText03" },
 
-    Traits = game.EnemyData.NPC_Athena_01.Traits,
+    Traits = game.TraitData.TycheUpgrade,
 
     Color = { 255, 90, 140, 255 },
     LightingColor = { 250, 165, 190, 190 },
@@ -115,4 +116,5 @@ gods.CreateOlympianSJSONData({
         SeriousPortraitFilePath = "DET-DivineExpansion\\Tyche\\Portrait_Tyche_Default_01",
     },
 })
+
 
