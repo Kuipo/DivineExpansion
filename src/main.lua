@@ -33,8 +33,8 @@ chalk = mods["SGG_Modding-Chalk"]
 ---@module 'SGG_Modding-ReLoad'
 reload = mods['SGG_Modding-ReLoad']
 
---@module 'zannc-GodsAPI'
-gods = mods['zannc-GodsAPI']
+---@module 'zannc-GodsAPI-auto'
+    gods = mods['zannc-GodsAPI'].auto() 
 
 ---@module 'config'
 config = chalk.auto 'config.lua'
@@ -45,7 +45,7 @@ local function on_ready()
 	-- what to do when we are ready, but not re-do on reload.
 	if config.enabled == false then return end
 
-	import ('Boons.lua')
+	import 'Boons.lua'
 	import 'ready.lua'
 	import 'gods.lua'
 end
