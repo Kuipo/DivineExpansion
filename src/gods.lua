@@ -45,7 +45,7 @@ end
 
 
 
-  gods.InitializeGod.auto() ( {
+  gods.InitializeGod( {
 		godName = "Tyche",
     godType  = "GOD",
     SpawnLikeHermes  = false,
